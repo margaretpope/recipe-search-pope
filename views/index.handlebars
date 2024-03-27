@@ -1,7 +1,33 @@
 {{> header}}
 <main>
-  <h1>This is the home page!</h1>
-  <p>Currently, you are {{#unless isLoggedIn}} NOT {{/unless}} logged in.</p>
-  <p>You should {{#unless isLoggedIn}}NOT{{/unless}} be able to access <a href="/private">this page</a>.</p>
-  <p>Use the header above to {{#if isLoggedIn}} logout{{else}} login or create an account{{/if}}.</p>
+  <h1>Calling all foodies</h1>
+  <p>Your one stop for saving favorite recipes and tracking the restaurants you love.</p>
+  <h2><a href="/login">Login here.</a></h2>
+  {{!search for recipe}}
+  <h3>Search for and save <a href="/favorites">your favorite recipes</a>!</h3>
+  <form>
+    <label for="search">Recipes</label>
+    <input type="text" name="search" id="search">
+    <button class="btn">Submit</button>
+  </form> 
+  {{!inserts result}}
+  <script>
+    fetch('/recipes')
+    .then(res => {if (res.status === 200) return res.json()
+    else throw new Error('Recipes not available')})
+  </script>
+  {{!input favorite restaurants}}
+  <h3>Log your <a href="/restaurants">your favorite restaurants!</h3>
+    <form action="/restaurants" method="POST">
+        <label for="restaurant">Restaurant:</label>
+        <input type="text" name="restaurant" id="restaurant" required/>
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" required/>
+        <label for="state">State:</label>
+        <input type="text" name="state" id="state" required/>
+        <label for="occassion">Occassion:</label>
+        <input type="text" name="occasion" id="occasion" required/>
+        <button type="submit">Submit</button>
+    </form>
 </main>
+

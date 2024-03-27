@@ -16,7 +16,7 @@ router.get("/signup", async (req, res) => {
   res.render("signup", { error: req.query.error });
 });
 
-router.get("/private", checkAuth, ({ session: { isLoggedIn } }, res) => {
+router.get("/favorites", checkAuth, ({ session: { isLoggedIn } }, res) => {
   res.render("protected", { isLoggedIn });
 });
 
