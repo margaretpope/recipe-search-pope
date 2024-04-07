@@ -9,6 +9,7 @@ CREATE TABLE users (
 CREATE TABLE favorite_recipes (
   -- save user's favorite recipes from API here??
   recipe_name VARCHAR(100) NOT NULL,
+  servings VARCHAR (100) NOT NULL,
   ingredients VARCHAR(5000) NOT NULL,
   instructions VARCHAR(5000) NOT NULL
   FOREIGN KEY (user_id)

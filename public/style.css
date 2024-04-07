@@ -1,24 +1,23 @@
 :root {
-  --black: #020303;
+  --ivory: ivory;
   --dark-grey: #171c1c;
   --light-grey: #a7b9b7;
-  --primary: #5cc1bb;
-  --primary-dark: #41aaa3;
-  --secondary: hsl(15deg 100% 62%);
+  --background: #185a37;
+  --secondary: #EF798A;
   --secondary-light: hsl(15deg 100% 70%);
-  --text-color: #f5fffe;
+  --text-color: #185a37;
   --space: 16px;
   --font-size: 18px;
 }
 
 body {
-  background-color: var(--primary-dark);
+  background-color: var(--background);
   color: var(--text-color);
   font-size: var(--font-size);
   line-height: 1.5;
   padding: 0;
   margin: 0;
-  font-family: helvetica;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -29,7 +28,7 @@ main {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  background-color: var(--black);
+  background-color: var(--ivory);
   padding: var(--space) calc(var(--space) * 3);
   text-align: center;
 }
@@ -50,7 +49,7 @@ h3 {
 }
 
 a {
-  color: var(--secondary-light);
+  color: var(--secondary);
   transition: color 200ms;
 }
 a:hover,
@@ -61,7 +60,8 @@ a:focus {
 button.btn {
   border: var(--text-color);
   border-radius: 4px;
-  background-color: var(--secondary-light);
+  color: var(--ivory);
+  background-color: var(--secondary);
   padding: calc(var(--space) * 0.75) calc(var(--space) * 2);
   cursor: pointer;
   transition: background-color 200ms;
@@ -87,7 +87,7 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--black);
+  background-color: var(--ivory);
   margin-bottom: calc(var(--space) * 6);
 }
 header a {
@@ -123,6 +123,15 @@ header .site-logo {
 .login-form input {
   margin-bottom: calc(var(--space) * 2);
   padding: calc(var(--space) * 0.5) calc(var(--space) * 1);
+}
+
+.footer {
+  background-color: var(--ivory);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px;
+  margin-top: auto;
+  font-size: 0.9rem;
 }
 
 @media screen and (max-width: 700px) {

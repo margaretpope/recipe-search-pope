@@ -8,8 +8,8 @@ router.post("/login", controllers.auth.login);
 router.get("/logout", controllers.auth.logout);
 router.post("/signup", controllers.user.create);
 
-//get data from recipe API
-//where does API key go??
+//get data for favorite receipe from API search into MySQL table
+//API key in .env file
 router.get('/recipe', async (req, res) => {
   try {
     const userSearch = form.search.value.trim()
@@ -20,7 +20,7 @@ router.get('/recipe', async (req, res) => {
   }
 })
 
-//add subscriber to newsletter
+//add subscriber to newsletter table
 router.post('/newsletter', async (req, res) => {
     try {
         const {firstName, lastName, email} = req.body
@@ -32,7 +32,7 @@ router.post('/newsletter', async (req, res) => {
     }
 })
 
-//add user input to restaurant list
+//add user input to restaurant list table
 router.post('/restaurants', async (req, res) => {
     try {
         const {restaurant, city, state, occassion} = req.body
@@ -46,5 +46,7 @@ router.post('/restaurants', async (req, res) => {
 
 //load user data on the "protected" page
 router.get('/restaurants')
+
+router.get('/fav')
 
 module.exports = router;
