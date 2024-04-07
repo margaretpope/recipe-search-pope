@@ -1,7 +1,14 @@
 {{> header}}
 <main>
   <h1>Your Saved Receipes</h1>
-  <p>You should only be able to see this page if logged in.</p>
-  <p>Currently, you are {{#unless isLoggedIn}} NOT {{/unless}} logged in.</p>
+  <p>You are {{#unless isLoggedIn}} NOT {{/unless}} logged in.</p>
   <p>Use the header above to {{#if isLoggedIn}} logout{{else}} login or create an account{{/if}}.</p>
+    {{#each favorite_recipes}}
+        <h2>{{recipe_name}}</h2>
+        <p>{{ingredients}}</p>
+        <p>{{instructions}}</p>
+    {{/each}}
 </main>
+<footer>
+    <p>&copy; Pope 2024</p>
+</footer>

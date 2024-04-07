@@ -1,0 +1,14 @@
+{{!display inputs from restaurant form/database}}
+{{> header}}
+<main>
+    <h1>Here is your log of favorite restaurants!</h1>
+    <p>Use the header above to {{#if isLoggedIn}} logout{{else}} login or create an account{{/if}}.</p>
+    <ul>
+        {{#each favorite_restaunts}}
+            <li>{{restaurant_name}}, {{city}}, {{state}}: {{occasion}}</li>
+        {{/each}}
+    </ul>
+</main>
+<footer>
+    <p>&copy; Pope 2024</p>
+</footer>
