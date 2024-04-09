@@ -6,8 +6,8 @@ CREATE TABLE users (
   password VARCHAR(200) NOT NULL
 );
 
-CREATE TABLE favorite_recipes (
   -- save user's favorite recipes from API here??
+CREATE TABLE favorite_recipes (
   recipe_name VARCHAR(100) NOT NULL,
   servings VARCHAR (100) NOT NULL,
   ingredients VARCHAR(5000) NOT NULL,
