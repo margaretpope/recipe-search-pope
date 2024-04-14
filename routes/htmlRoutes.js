@@ -28,6 +28,12 @@ router.get("/recipes", checkAuth, ({ session: { isLoggedIn } }, res) => {
 //display restaurants
 router.get("/displayRestaurants/:user_id", checkAuth, controllers.restaurants.display)
 
+//update restaurants
+router.put("/updateRestaurant", checkAuth, controllers.restaurants.update)
+
+//delete restaurants
+router.delete("deleteRestaurant", checkAuth, controllers.restaurants.deleteExisting)
+
 //API results
 router.get("/searchRecipes", checkAuth, controllers.recipes.searchRecipes)
 

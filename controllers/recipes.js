@@ -2,17 +2,17 @@ const axios = require('axios')
 
 //API calls
 async function searchRecipes(userSearch) {
-    try {
-      const results = null
-      if (req.query.search) {
-        axios.get(`https://api.api-ninjas.com/v1/recipe?query=${userSearch}`)
-        console.log(res.data)
-        res.json(res.data)
-        results = res.data}
-    } catch(err) {
-      res.status(502).send('Recipe not available.')
-    }
-    res.render("index", {isLoggedIn, results})
+  try {
+    response = await axios.get(`https://api.api-ninjas.com/v1/recipe?query=${userSearch}`,
+      {headers: {
+        'X-Api-Key': process.env.API_KEY
+      }})
+    console.log(response.data)
+    return (response.data)
+  } catch(err) {
+    console.error(err)
+  }
+  res.render("recipes", {isLoggedIn, response})
 };
 
 module.exports = { 

@@ -2,13 +2,13 @@
 <main>
   <h1>Search for your favorite recipes here:</h1>
   <form action="/searchRecipes" method="GET">
-    <label for="search">Recipes:</label>
-    <input type="text" name="search" id="search" placeholder="Search...">
+    <label for="userSearch">Recipes:</label>
+    <input type="text" name="search" id="userSearch" placeholder="Search...">
     <button class="btn">Submit</button>
   </form> 
   {{!display results}}
-  {{#each results}}
-    <p>{{name}}</p>
+  {{#each response}}
+    <p>{{title}}</p>
     <p>{{servings}}</p>
     <p>{{ingredients}}</p>
     <p>{{instructions}}</p>
