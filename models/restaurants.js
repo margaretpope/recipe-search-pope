@@ -10,18 +10,18 @@ async function inputRestaurant(restaurant_name, city, state, occassion) {
 }
 
 //display restaurants
-async function displayFavorites(user_id) {
+async function displayFavorites(restaurant_name, city, state, occassion) {
     const [restaurants] = await db.query(
         `SELECT * FROM favorite_restaurants WHERE user_id = ?`,
-        [user_id]
+        [{restaurant_name, city, state, occassion}]
     )
 }
 
 //update existing restaurant
-async function updateRestaurant(id) {
+async function updateRestaurant(restaurant_name, city, state, occassion) {
     const[{affectedRows}] = db.query(
     `UPDATE favorite_restaurants SET ? WHERE id = ?`,
-    [id])
+    [{restaurant_name, city, state, occassion}])
 }
 
 module.exports = {

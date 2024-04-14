@@ -26,7 +26,8 @@ router.get("/recipes", checkAuth, ({ session: { isLoggedIn } }, res) => {
 });
 
 //display restaurants
-router.get("/displayRestaurants", checkAuth, controllers.restaurants.display)
+//causes app to crash
+//router.get("/displayRestaurants/:user_id", checkAuth, controllers.restaurants.display)
 
 //update user
 router.put('/user')
