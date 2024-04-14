@@ -1,11 +1,24 @@
 {{!display inputs from restaurant form/database}}
 {{> header}}
+{{!input favorite restaurants}}
 <main>
-    <h1>Here is your log of favorite restaurants!</h1>
-    <p>Use the header above to {{#if isLoggedIn}} logout{{else}} login or create an account{{/if}}.</p>
-    <ul>
-        {{#each favorite_restaunts}}
-            <li>{{restaurant_name}}, {{city}}, {{state}}: {{occasion}}</li>
+    <h1>Log your favorite restaurants here:</h1>
+    <form action="/api/restaurants" method="POST">
+        <label for="restaurant">Restaurant:</label>
+        <input type="text" name="restaurant" id="restaurant" required/>
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" required/>
+        <label for="state">State:</label>
+        <input type="text" name="state" id="state" required/>
+        <label for="occassion">Occassion:</label>
+        <input type="text" name="occasion" id="occasion" required/>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Favorite Restaurants</h2>
+        {{#each favorite_restaurant}}
+            <h2>{{restaurant_name}}</h2>
+            <p>{{city}}, {{state}}</p>
+            <p>{{occasion}}</p>
         {{/each}}
     </ul>
 </main>

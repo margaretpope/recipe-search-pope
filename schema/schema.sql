@@ -8,19 +8,14 @@ CREATE TABLE users (
 
   -- save user's favorite recipes from API here??
 CREATE TABLE favorite_recipes (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   recipe_name VARCHAR(100) NOT NULL,
   servings VARCHAR (100) NOT NULL,
   ingredients VARCHAR(5000) NOT NULL,
-  instructions VARCHAR(5000) NOT NULL
+  instructions VARCHAR(5000) NOT NULL,
+  user_id INT NOT NULL,
   FOREIGN KEY (user_id)
-    REFERENCE users (id)
-);
-
--- sign up to receive a newlsletter of new restaurants and recipes
-CREATE TABLE newsletter (
-  first_name VARCHAR(50) NOT NULL,
-  last_name VARCHAR(50) NOT NULL,
-  email_address VARCHAR(50) NOT NULL
+    REFERENCES users (id)
 );
 
 -- user input the restaurants they've visited
@@ -30,6 +25,7 @@ CREATE TABLE favorite_restaurants (
   city VARCHAR(50) NOT NULL,
   state VARCHAR(50) NOT NULL,
   occasion VARCHAR (200) NOT NULL,
+  user_id INT NOT NULL,
   FOREIGN KEY (user_id)
     REFERENCES users (id)
 );

@@ -1,8 +1,27 @@
 {{> header}}
 <main>
-  <h1>Your Saved Receipes</h1>
-  <p>You are {{#unless isLoggedIn}} NOT {{/unless}} logged in.</p>
-  <p>Use the header above to {{#if isLoggedIn}} logout{{else}} login or create an account{{/if}}.</p>
+  <h1>Search for your favorite recipes here:</h1>
+  <form action="/recipes" method="GET">
+    <label for="search">Recipes:</label>
+    <input type="text" name="search" id="search" placeholder="Search...">
+    <button class="btn">Submit</button>
+  </form> 
+  <script>
+    fetch('/')
+    .then(res => {
+      if (res.status === 200)
+        return res.json()
+      else
+        throw new Error('Recipes not available')})
+  </script>
+  {{!display results}}
+  {{#each results}}
+    <p>{{name}}</p>
+    <p>{{servings}}</p>
+    <p>{{ingredients}}</p>
+    <p>{{instructions}}</p>
+  {{/each}}
+  <h2>Your Saved Recipes</h2>
     {{#each favorite_recipes}}
         <h2>{{recipe_name}}</h2>
         <p>{{ingredients}}</p>

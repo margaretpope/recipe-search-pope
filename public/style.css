@@ -39,21 +39,16 @@ main form {
 }
 
 h1 {
-  font-size: calc(var(--font-size) * 2.25);
+  font-size: 30;
 }
 h2 {
-  font-size: calc(var(--font-size) * 2);
+  font-size: 22px;
 }
 h3 {
-  font-size: calc(var(--font-size) * 1.5);
+  font-size: 18px;
 }
 
 a {
-  color: var(--secondary);
-  transition: color 200ms;
-}
-a:hover,
-a:focus {
   color: var(--secondary);
 }
 
@@ -62,7 +57,7 @@ button.btn {
   border-radius: 4px;
   color: var(--ivory);
   background-color: var(--secondary);
-  padding: calc(var(--space) * 0.75) calc(var(--space) * 2);
+  padding: 10px;
   cursor: pointer;
   transition: background-color 200ms;
 }
@@ -76,12 +71,14 @@ button.btn-text {
 
 button.btn:hover,
 button.btn:focus {
-  background-color: var(--secondary);
+  background-color: var(--background);
 }
+
 button.btn-text:hover,
 button.btn-text:focus {
-  color: var(--secondary);
+  color: var(--background);
 }
+
 header {
   display: flex;
   flex-wrap: wrap;
@@ -99,6 +96,19 @@ header .site-logo {
   margin-right: auto;
 }
 
+.nav {
+  text-decoration: none;
+  color: var(--secondary);
+  transition: color 200ms;
+  text-transform: uppercase;
+}
+
+.nav:hover {
+  text-decoration: underline;
+  color: var(--background);
+}
+
+
 .site-logo {
   text-align: center;
   color: var(--text-color);
@@ -113,7 +123,7 @@ header .site-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: calc(var(--space) * 3) 0;
+  padding: 25px;
 }
 
 .login-form .login-error {
@@ -132,6 +142,83 @@ header .site-logo {
   padding: 3px;
   margin-top: auto;
   font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 414px) {
+  .header {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .header__nav {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .header__link {
+    padding: 10px 20px;
+  }
+
+  .main {
+    margin: 20px;
+  }
+
+  .article__h1 {
+    font-size: 1.1rem;
+  }
+
+  .article__p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .button {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    padding: 5px;
+  }
+}
+
+/* Media query for iPad */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+
+  .header__nav {
+    justify-content: flex-end;
+    margin: 0;
+  }
+
+  .header__link {
+    padding: 12px 25px;
+  }
+
+  .main {
+    margin: 50px 15%;
+  }
+
+  .article__h1 {
+    font-size: 1.2rem;
+  }
+
+  .article__p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width: 700px) {

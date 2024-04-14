@@ -3,12 +3,11 @@
     Recipe Search
   </a>
   {{#if isLoggedIn}}
-    <a href="/api/logout">Logout</a>
+    <a href="/api/logout" class="nav">Logout</a>
   {{else}}
-    <a href="/login">Login</a>
-    <a href="/signup">Sign Up</a>
+    <a href="/login" class="nav">Login</a>
+    <a href="/signup" class="nav">Sign Up</a>
   {{/if}}
-    <a href="/newsletter">Newsletter</a>
-    <a href="/recipes">Saved Recipes</a>
-    <a href="/restaurants">Favorite Restaurants</a>
+    <a href="/recipes" class="nav">Saved Recipes</a>
+    <a href="/restaurants" class="nav">Favorite Restaurants</a>
 </header>
