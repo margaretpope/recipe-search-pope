@@ -3,7 +3,6 @@ const { restaurants } = require('../models');
 //add restaurant to user's favorites
 async function newFavorite(req, res) {
   try {
-    const user = req.session.userId
     const {restaurant_name, city, state, occassion} = req.body
     if (!(restaurant_name && city && state && occassion))
       return res.status(400).send('all fields required')
@@ -11,7 +10,7 @@ async function newFavorite(req, res) {
   } catch(err) {
       res.status(500).send(err.message)
   }
-  res.render('restaurants', {isLoggedIn, newFavorite})
+  res.render('restaurants', {newFavorite})
 };
 
 //display restaurants

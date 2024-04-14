@@ -9,8 +9,7 @@ router.get("/logout", controllers.auth.logout);
 router.post("/signup", controllers.user.create);
 
 //post form input to database
-//this route is causing the app to crash and i have no idea why
-//router.post("/restaurants", controllers.restaurants.newFavorite);
+router.post("/restaurants", controllers.restaurants.newFavorite);
 
 //load user data on the "protected" page
 router.get('/restaurants');

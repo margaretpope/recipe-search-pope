@@ -1,19 +1,11 @@
 {{> header}}
 <main>
   <h1>Search for your favorite recipes here:</h1>
-  <form action="/recipes" method="GET">
+  <form action="/searchRecipes" method="GET">
     <label for="search">Recipes:</label>
     <input type="text" name="search" id="search" placeholder="Search...">
     <button class="btn">Submit</button>
   </form> 
-  <script>
-    fetch('/')
-    .then(res => {
-      if (res.status === 200)
-        return res.json()
-      else
-        throw new Error('Recipes not available')})
-  </script>
   {{!display results}}
   {{#each results}}
     <p>{{name}}</p>
